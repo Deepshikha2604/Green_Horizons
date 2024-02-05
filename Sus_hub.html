@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainibility Hub</title>
+    <style>
+        .bg{
+            background-repeat: inherit;
+            background-size: cover;
+        }
+        .i{
+                float:left;
+            }
+        /* .Y{
+            background-color: aqua;
+        } */
+            ul
+            {
+                height: auto;
+                list-style: none;
+                padding:0px;
+                margin: 0px;
+                font-size: 20px;
+                display: flex;
+                padding-left: 60%;
+                /* background-color: rgb(49, 241, 62); */
+                
+            }
+            li a
+            {
+                text-decoration: none;
+                padding: 10px 12px;
+                display: block;
+               
+            }
+            a:hover
+            {
+                background-color: rgb(11, 185, 13);
+                color: rgb(21, 12, 192);
+                font-size: 25px;
+            }
+        .Z
+        {
+            border: 10px groove rgb(5, 8, 5);
+            padding: 30px;
+            width:20%;
+            font-size:20px;
+            background:rgb(175, 247, 247);
+            color:white;
+            position:absolute;
+            top:200px;
+            left:35%;
+
+        }
+        p
+        {
+            position:relative;
+            top:5px;
+            left:20%;
+            font-size:20px;
+            color: black;
+            width:250px;
+        }
+        .button
+        {
+            font-size: large;
+            height:40px;
+            width:100%;
+        }
+        .button:hover
+        {
+            background-image:linear-gradient(to left, rgb(56, 249, 56),rgb(159, 159, 238),rgb(56, 249, 56));
+            border:none;
+            color:rgb(77, 2, 2);
+        }
+        .o{
+            width:30px;
+            height:30px;
+        }
+        .z{
+            background-color: burlywood;
+            
+            font-size: large;
+            text-align: left;
+        }
+    </style>
+    <script class="z">
+        function calculate(){
+            g=parseInt(document.getElementById('ch').value);
+            switch(g){
+                
+                case 1:
+                    emission_factors = {
+                        'electricity': 0.4,
+                        'transportation': 2.0,
+                        'heating': 1.5,
+                        'waste': 0.2,
+                        'shopping': 1.0
+                    }
+                    electricity_usage=parseFloat(prompt("Enter your monthly electricity usage in kWh(Safe range-100-500):"));
+                    transportation_distance=parseFloat(prompt("Enter your monthly transportation distance in km(safe range-upto 200):"));
+                    heating_usage=parseFloat(prompt("Enter your monthly heating usage in kWh(safe range-50-300):"));
+                    waste_generated=parseFloat(prompt("Enter your monthly waste generated in kg(safe range-upto 10 ):"));
+                    shopping_expenses=parseFloat(prompt("Enter your monthly shopping expenses in USD(safe range-upto 100):"));
+                    document.write('electricity emission is: ',electricity_usage * emission_factors['electricity'],'kg CO2e'); 
+                    document. write('<br/>');
+                    document. write('<br/>');
+                    document.write(' transportation_emission is: ',transportation_distance * emission_factors['transportation'],'kg CO2e');
+                    document. write('<br/>');
+                    document. write('<br/>');
+                    document.write('heating_emission is: ',heating_usage * emission_factors['heating'],'kg CO2e');
+                    document. write('<br/>');
+                    document. write('<br/>');
+                    document.write('waste_emission is: ',waste_generated * emission_factors['waste'],'kg CO2e');
+                    document. write('<br/>');
+                    document. write('<br/>');
+                    document.write('shopping_emission is: ', shopping_expenses * emission_factors['shopping'],'kg CO2e');
+                    document. write('<br/>');
+                    document. write('<br/>');
+                    t=electricity_usage * emission_factors['electricity']+transportation_distance * emission_factors['transportation']+heating_usage * emission_factors['heating']+waste_generated * emission_factors['waste']+shopping_expenses * emission_factors['shopping'];
+                    document.write('Total Carbon Footprint: ',t,' kg CO2e');
+                    document. write('<br/>');
+                    document. write('<br/>');
+                    if(t<=700){
+                        document.write('SAFE!!')
+                    }
+                    else{
+                        document.write('NEED TO TAKE PRECAUTIONS!!')
+                    }
+                    break;
+                
+                case 2:
+                    weight=parseFloat(prompt("Enter your weight in kg:"));
+                    height=parseFloat(prompt("Enter your height in cm:"));
+                    age=parseInt(prompt("Enter your age in years"));
+                    Gender=prompt("Enter your gender(M/F)");
+                    n=parseInt(prompt("Enter your activeness on a scale of 1 to 5 (1-not at all, 5-extra active)"));
+                    BMR_M=10 * weight + 6.25 * height - 5 * age + 5;
+                    BMR_F=10 * weight + 6.25 * height - 5 * age - 161;
+                    
+                    document.write('Weight: ',weight);
+                    document.write('<br/>');
+                    document. write('<br/>');
+                    document.write('height: ',height);
+                    document.write('<br/>');
+                    document. write('<br/>');
+                    document.write('age: ',age);
+                    document.write('<br/>');
+                    document. write('<br/>');
+                    document.write('gender:  ',Gender);
+                    document.write('<br/>');
+                    document. write('<br/>');
+                    if(Gender=='M'){
+                        document.write('Basal Metabolic rate(BMR) for males: ',BMR_M,'cal');
+                        document.write('<br/>');
+                        document. write('<br/>');
+                        if(n==1){
+                            document.write('calorie-calculation is: ', BMR_M*1.2,'cal');
+                            if(BMR_M*1.2>2500){
+                                document.write('<br/>');
+                                document.write((BMR_M*1.2)-2500, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==2){
+                            document.write('calorie-calculation is: ', BMR_M*1.375,'cal');
+                            if(BMR_M*1.375>2500){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_M*1.375)-2500, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==3){
+                            document.write('calorie-calculation is: ', BMR_M*1.55,'cal');
+                            if(BMR_M*1.55>2500){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_M*1.55)-2500, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==4){
+                            document.write('calorie-calculation is: ', BMR_M*1.725,'cal');
+                            if(BMR_M*1.725>2500){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_M*1.725)-2500, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==5){
+                            document.write('calorie-calculation is: ', BMR_M*1.9,'cal');
+                            if(BMR_M*1.9>2500){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_M*1.9)-2500, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                    }
+                    else{
+                        document.write('Basal Metabolic rate(BMR) for females: ',BMR_F,'cal');
+                        document.write('<br/>');
+                        document. write('<br/>');
+                        if(n==1){
+                            document.write('calorie-calculation is: ', BMR_F*1.2,'cal');
+                            if(BMR_F*1.2>2000){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_F*1.2)-2000, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==2){
+                            document.write('calorie-calculation is: ', BMR_F*1.375,'cal');
+                            if(BMR_F*1.375>2000){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_F*1.375)-2000, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==3){
+                            document.write('calorie-calculation is: ', BMR_F*1.55,'cal');
+                            if(BMR_F*1.55>2000){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_F*1.55)-2000, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==4){
+                            document.write('calorie-calculation is: ', BMR_F*1.725,'cal');
+                            if(BMR_F*1.725>2000){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_F*1.725)-2000, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+                        if(n==5){
+                            document.write('calorie-calculation is: ', BMR_F*1.9,'cal');
+                            if(BMR_F*1.9>2000){
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write((BMR_F*1.9)-2000, " cal MORE THAN THE REQUIRED RANGE...");
+                            }
+                            else{
+                                document.write('<br/>');
+                                document. write('<br/>');
+                                document.write("PERFECT...");
+                            }
+                        }
+
+                    }
+                    break;
+                default:
+                    document.write("Please Enter Valid Ques.No");
+            }
+            
+        }
+
+    </script>
+</head>
+<body class="bg" background="C:\Users\DEEPSHIKHA\OneDrive\Desktop\Hackathon project\pexels-james-wheeler-1542495.jpg">
+    <div class="Y">
+        <img class="i" src="C:\Users\DEEPSHIKHA\OneDrive\Desktop\Hackathon project\green-fitness-logo-vector-34007856.jpg" height="80px" width="80px">
+        <h1><font size="5" face="aptos"><B>GREEN HORIZONS: EMBRACE WELNESS EMBRACE EARTH</font></B></h1>
+        <ul>
+            <li><a href="home.html"><font color="black"><b>Home</b></font></a></li>
+            <li><a href="about_us .html"><font color="black"><b>About us</b></font></a></li>
+            <li><a href="Sus_hub.html"><font color="black"><b>Sustainibility hub</b></font></a></li>
+            <li><a href="f.html"><font color="black"><b>Feedback</b></font></a></li>
+        </ul>
+        </div>
+        <hr color="Black" height="10px">
+
+<div class="Z">
+    <p>1. Carbon Footprint Tracker</p>
+    <p>2. Calorie Tracker</p>
+    <p>Enter number:<input type="text" class="o" id="ch"></p><br>
+    
+    <input type="submit" onclick="calculate()" class="button">
+</div>
+</body>
+</html>
